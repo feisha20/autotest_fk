@@ -59,7 +59,7 @@ def edit_test_case():
         log.log().logger.info('info : %s' % info)
         id = viewutil.getInfoAttribute(info, 'id')
         log.log().logger.info('id: %s' % id)
-        return render_template("uitest/edit_test_cases2.html", id=id)
+        return render_template("uitest/edit_test_cases.html", id=id)
     if request.method == 'POST':
         info = request.form
         log.log().logger.info('info : %s' % info)
@@ -646,7 +646,7 @@ def test_case_runhistory():
         id = viewutil.getInfoAttribute(info, 'id')
         log.log().logger.info('id: %s' % id)
         if len(test_case_manage.test_case_manage().show_test_cases(['id'], [id], [], 2)) == 1:
-            return render_template("uitest/test_batch2.html", id=id, type='test_case', test_suite_id='')
+            return render_template("uitest/view_test_history.html", id=id, type='test_case', test_suite_id='')
         else:
             return render_template("uitest/test_cases.html")
     else:
