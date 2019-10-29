@@ -6,9 +6,6 @@ db_user = 'root'
 db_password = 'test123456'
 database = 'test_auto_new'
 
-# atx 配置
-isUseATX = True
-ATXHost = 'http://localhost:8000'
 
 # 截图目录相关配置
 import os
