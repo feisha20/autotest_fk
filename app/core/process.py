@@ -8,7 +8,7 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from app import config
-from app.core import buildCase, log, hubs, coredriver, util, atx_core,extend
+from app.core import buildCase, log, hubs, coredriver, util,extend
 from app.db import test_task_manage,test_batch_manage
 
 isUseATX = config.isUseATX
