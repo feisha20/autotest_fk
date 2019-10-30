@@ -1,20 +1,20 @@
-{% extends "index_1.html" %}
+{% extends "base.html" %}
 
 {% block title %}UI自动化 测试平台 - general_test_batch{% endblock %}
 
 {% block head %}
 <meta name="viewport" content="width=device-width" />
-    <script src="../static/jquery-1.12.4.js"></script>
-    <script src="../static/scripts/util/init.js"></script>
-    <script src="../static/scripts/util/util.js"></script>
-    <script src="../static/scripts/core/test_batch.js"></script>
+    <script src="../../static/jquery-1.12.4.js"></script>
+    <script src="../../static/scripts/util/init.js"></script>
+    <script src="../../static/scripts/util/util.js"></script>
+    <script src="../../static/scripts/core/test_batch.js"></script>
 
 
-    <script src="../static/bootstrap-3.3.7-dist/dist/js/bootstrap.js"></script>
-    <link href="../static/bootstrap-3.3.7-dist/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="../../static/bootstrap-3.3.7-dist/dist/js/bootstrap.js"></script>
+    <link href="../../static/bootstrap-3.3.7-dist/dist/css/bootstrap.css" rel="stylesheet" />
 
-    <script src="../static/bootstrap-table-develop/dist/bootstrap-table.js"></script>
-    <link href="../static/bootstrap-table-develop/dist/bootstrap-table.css" rel="stylesheet" />
+    <script src="../../static/bootstrap-table-develop/dist/bootstrap-table.js"></script>
+    <link href="../../static/bootstrap-table-develop/dist/bootstrap-table.css" rel="stylesheet" />
     <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
     <script>window.onload =function(){
             document.getElementById('btn_reset').click();
@@ -28,7 +28,7 @@
 {% block content %}
     <div class="panel-body" style="padding-bottom:0px;" >
 
-                <h1 style="text-align:center">查看测试结果</h1>
+                <h2 style="text-align:center" class="text-navy">查看测试结果</h2>
         <div class="overview-score">
         <div class="lay2">
      <div class="form-group">
@@ -94,7 +94,7 @@
                      <div class="panel-heading">查询条件</div>
                     <div class="form-group" style="margin-top:15px">
                         <label class="control-label col-sm-1" for="selectStatus">执行状态</label>
-                        <div class="col-sm-1">
+                        <div class="col-sm-2">
                         <select class="form-control" onchange="selectOnchang(this)" id="selectStatus">
                             <option value="">-请选择-</option>
                             <option value="0">0-待执行</option>
@@ -107,8 +107,7 @@
                         <div class="col-sm-2">
                             <input type="text" class="form-control" id="casename" size="20">
                         </div>
-                         <label class="control-label col-sm-1" for="ipList" id ="ipListLabel">设备列表</label>
-                        <div class="col-sm-1">
+                                                 <div class="col-sm-1">
                         <select class="form-control required"  multiple name="ipList" id="ipList">
                         </select>
                         </div>
@@ -117,7 +116,7 @@
                              <button id="btn_reset" type="button" class="btn btn-default" onclick="return initPage({{id}})">刷新</button>
                             <button id="btn_rerun_all" type="button" class="btn btn-default" onclick="run_test_case_all({{id}})">重跑全部用例</button>
                             <button id="btn_rerun_part" type="button" class="btn btn-default" onclick="run_test_case_part({{id}})">重跑失败用例</button>
-                            <button id="btn_attach" type="button" class="btn btn-default" onclick="window.location.href=('/attach_test_batch?test_suite_id={{id}}')">关联用例</button>
+                            <button id="btn_attach" type="button" class="btn btn-default hidden" onclick="window.location.href=('/attach_test_batch?test_suite_id={{id}}')">关联用例</button>
                             <button id="btn_runIp_test" type="button" class="btn btn-default" onclick="run_test_case_all_Ip({{id}})">指定设备重跑</button>
                         </div>
                     </div>

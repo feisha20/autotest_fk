@@ -1,4 +1,4 @@
-{% extends "index_1.html" %}
+{% extends "base.html" %}
 
 {% block title %}UI自动化 测试平台 - general_test_batch{% endblock %}
 
@@ -39,8 +39,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1 style="text-align:center">关联测试用例</h1>
-                <font color="red"> 注意： 执行类型为 Chrome 时，不能关联 android 模块的用例， 否则无法执行！</font>
+                <h2 style="text-align:center" class="text-navy">关联测试用例</h2>
                 <form class="form-horizontal" id="new_test_suite" action="/edit_test_suite" method="post">
                     <div class="form-group">
                         <label for="type" class="col-sm-2 control-label">用例集ID</label>

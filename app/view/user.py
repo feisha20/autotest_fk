@@ -19,13 +19,13 @@ def authorize(fn):
             return fn()
         else:
             log.log().logger.info ("未登录")
-            return render_template("util/login_1.html")
+            return render_template("util/login.html")
     return wrapper
 
 #登录页面
 @mod.route('/login')
 def login():
-    return render_template("util/login_1.html")
+    return render_template("util/login.html")
 
 #检查登录信息是否正确
 @mod.route('/checklogin.json', methods=['POST', 'GET'])
@@ -56,7 +56,7 @@ def checklogin():
 @mod.route('/loginout')
 def loginout():
     session['user']=None
-    return render_template("util/login_1.html")
+    return render_template("util/login.html")
 
 
 

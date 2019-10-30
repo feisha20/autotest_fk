@@ -1,4 +1,4 @@
-{% extends "index_1.html" %}
+{% extends "base.html" %}
 
 {% block title %}UI自动化 测试平台 - new user{% endblock %}
 
@@ -26,7 +26,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1 style="text-align:center">新增用户</h1>
+                <h2 style="text-align:center" class="text-navy">新增用户</h2>
                 <form class="form-horizontal" enctype="multipart/form-data" id="new_user" action="/add_user.json"
                       method="post">
                     <!--action="/save_new_test_case" method="post"-->

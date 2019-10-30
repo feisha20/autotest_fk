@@ -1,4 +1,4 @@
-{% extends "index_1.html" %}
+{% extends "base.html" %}
 
 {% block title %}UI自动化 测试平台 - 节点管理{% endblock %}
 
@@ -24,7 +24,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1 style="text-align:center">节点管理</h1>
+                <h2 style="text-align:center" class="text-navy">节点管理</h2>
                 <div class="panel panel-default">
                     <div class="panel-heading">查询条件</div>
                     <div class="panel-body">
@@ -35,17 +35,12 @@
                                     <input type="text" class="form-control" id="name">
                                 </div>
 
-                                <div class="col-sm-6" style="text-align:left;">
-                                    <button type="button" style="margin-left:70px" id="btn_query"
+                                <div class="col-sm-4" style="text-align:left;">
+                                    <button type="button" style="margin-left:50px" id="btn_query"
                                             class="btn btn-primary" onclick="searchHubs()">查询
                                     </button>
-                                    <button type="button" style="margin-left:70px" id="btn_check_hubs"
+                                    <button type="button" style="margin-left:50px" id="btn_check_hubs"
                                             class="btn btn-primary" onclick="check_hubs()">检测
-                                    </button>
-                                    <button id="rerun_locust" style="margin-left:70px" type="button"
-                                            class="btn btn-primary"
-                                            onclick="window.location.href=('/view_hub')">
-                                        查看Android设备列表
                                     </button>
                                 </div>
                             </div>
