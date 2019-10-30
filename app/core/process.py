@@ -11,7 +11,7 @@ from app import config
 from app.core import buildCase, log, hubs, coredriver, util,extend
 from app.db import test_task_manage,test_batch_manage
 
-isUseATX = config.isUseATX
+# isUseATX = config.isUseATX
 
 class process():
 
@@ -34,13 +34,9 @@ class process():
                     package = newstep[0][1][0]
             newstep.remove(newstep[0])
             case.remove(case[0])
-            if runType == 'Android' and isUseATX:
-                # 使用 atx 执行 Android 用例
-                result, stepN,screenFileList = atx_core.atx_core().run_case(id,package,newstep,case,screenFileList,deviceList=deviceList)
-                log.log().logger.info('%s, %s, %s' %(result, stepN,screenFileList))
-            else:
-                # 使用 selenium 执行 web 用例
-                result,stepN,screenFileList = self.run_selenium(id,runType,package,newstep,case,screenFileList)
+
+            # 使用 selenium 执行 web 用例
+            result,stepN,screenFileList = self.run_selenium(id,runType,package,newstep,case,screenFileList)
         else:
             result = '3'
             stepN = '公共方法不存在!'
@@ -139,16 +135,7 @@ class process():
         pool.join()
 
     def runmain(self,test_suite_id,threadNum, runType ):
-        if runType == 'Android' and isUseATX:
-            Hubs = hubs.hubs().getDevices()
-            log.log().logger.debug('Run type is ATX and usable devices are %s' %Hubs)
-        else:
             Hubs = hubs.hubs().showHubs(runType)
-        if len(Hubs) ==0:
-            log.log().logger.debug('cannot run for no available hubs!')
-        elif runType == 'Android' and isUseATX:
-            self.atxMain()
-        else:
             self.multipleRun(util.util().getTeseCases(test_suite_id),threadNum)
             test_task_manage.test_task_manage().update_test_suite_check()
 

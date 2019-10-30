@@ -3,6 +3,7 @@ from app import log
 from app.view import viewutil, user
 from app.db import test_case_manage, test_batch_manage, test_suite_manage, test_keyword_manage
 import pyecharts
+import io
 
 mod = Blueprint('uitest', __name__,
                 template_folder='templates/uitest')
@@ -543,6 +544,7 @@ def delete_test_suite():
 @mod.route('/view_test_suite_screenshot', methods=['POST', 'GET'])
 @user.authorize
 def view_test_suite_screenshot():
+    import base64
     log.log().logger.info(request)
     if request.method == 'GET':
         log.log().logger.info('post')
@@ -581,8 +583,11 @@ def view_test_suite_screenshot():
         else:
             log.log().logger.info(imgUrl)
             index = index % len(imgUrl)
+            img_path = "app/" + imgUrl[index]
+            figfile = io.BytesIO(open(img_path, 'rb').read())
+            img = base64.b64encode(figfile.getvalue()).decode('ascii')
             return render_template('uitest/view_test_suite_screenshot.html', imgUrl=imgUrl[index], index=index, id=id,
-                                   imgTitle=imgTitle[index], imgCnt=len(imgUrl), test_batch_id=test_batch_id, type=type)
+                                   imgTitle=imgTitle[index], imgCnt=len(imgUrl), test_batch_id=test_batch_id, type=type, img=img)
 
 
 @mod.route('/runtest.json', methods=['POST', 'GET'])
