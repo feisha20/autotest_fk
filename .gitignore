@@ -1,1 +1,4 @@
 .idea/
+!/app/log/flask.log
+/app/log/
+__pycache__/
