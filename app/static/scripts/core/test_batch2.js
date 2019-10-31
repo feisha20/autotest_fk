@@ -152,28 +152,23 @@ var TableInit = function (test_case_id) {
             }, {
                 field: 'id',
                 title: 'ID'
-            }, {
-                field: 'test_suite_id',
-                title: '用例集ID'
-            }, {
+            },
+                {
                 field: 'name',
                 title: '名称'
-            }, {
-                field: 'browser_type',
-                title: '浏览器类型'
-            }
-            , {
+            },
+                {
                 field: 'status',
                 title: '执行状态',
                 formatter: function(value,row,index) {
             //通过判断单元格的值，来格式化单元格，返回的值即为格式化后包含的元素
             var a = "";
                 if(value == "1-执行成功") {
-                    var a = '<span style="color:#00ff00">'+value+'</span>';
+                    var a = '<span style="color:#00CD00">'+value+'</span>';
                 }else if(value == "2-执行失败"){
-                    var a = '<span style="color:#0000ff">'+value+'</span>';
+                    var a = '<span style="color:#FF3030">'+value+'</span>';
                 }else if(value == "0-待执行") {
-                    var a = '<span style="color:#FF0000">'+value+'</span>';
+                    var a = '<span style="color:#4876FF">'+value+'</span>';
                 }else{
                     var a = '<span>'+value+'</span>';
                 }
@@ -194,9 +189,6 @@ var TableInit = function (test_case_id) {
                         var b = '<a href="javascript:;" onclick="run_test_batch_record(\''+row.id+'\',\''+row.test_case_id+ '\')">重跑</a> ';
                         return b+a;
                         }
-            }, {
-                field: 'message',
-                title: '描述'
             }
                 ]
         });

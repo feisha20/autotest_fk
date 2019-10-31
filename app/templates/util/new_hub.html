@@ -19,28 +19,28 @@
 
 {% block content %}
 <div class="wrapper wrapper-content">
-    <div class="container">
+    <div class="flot-chart-content">
         <div class="row">
             <div class="col-sm-12">
                 <h2 style="text-align:center" class="text-navy">编辑selenium 节点</h2>
                 <form class="form-horizontal" enctype="multipart/form-data" id="new_hub" action="/add_hub.json"
                       method="post">
                     <div class="form-group">
-                        <label for="host" class="col-sm-2 control-label">Host IP</label>
+                        <label for="host" class="col-sm-1 control-label">Host IP</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control required" id="host" name="host"
                                    placeholder="请输入Host ip" required data-msg-required="不能为空" value="{{host}}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="port" class="col-sm-2 control-label">端口</label>
+                        <label for="port" class="col-sm-1 control-label">端口</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="port" name="port" placeholder="请输入端口，默认4444"
                                    value="{{port}}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="status" class="col-sm-2 control-label">端口</label>
+                        <label for="status" class="col-sm-1 control-label">端口</label>
                         <div class="col-sm-10">
                             <select class="form-control required" name="status" id="status"
                                     onchange="selectOnchang(this);">
@@ -49,8 +49,9 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">s
-                        <div class="col-sm-offset-2 col-sm-10">
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">操作</label>
+                        <div class="col-sm-10">
                             <button id="submitButton" class="btn btn-primary" onclick="addHub()">保存</button>
                             <button id="btn_add" type="button" class="btn btn-default"
                                     onclick="window.location.href=('/testhubs')">返回

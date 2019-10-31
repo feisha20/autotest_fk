@@ -20,35 +20,42 @@
 
 {% endblock %}
 {% block content %}
-<div class="panel-body" style="padding-bottom:0px;">
-    <h3 style="text-align:center">共有图片{{imgCnt}}张</h3>
-    <!--<h4 style="text-align:center">{{imgTitle}}</h4>-->
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10" align="right">
-            <button id="btn_next" type="button" class="btn btn-primary btn-sm"
-                    onclick="window.location.href=('/view_test_suite_screenshot?id={{id}}&test_batch_id={{test_batch_id}}&type={{type}}&index={{index}}')">
-                下一页
-            </button>
-            <button id="btn_back" type="button" class="btn btn-default btn-sm"
-                    onclick="return_page('{{test_batch_id}}','{{type}}')">返回
-            </button>
-        </div>
-    </div>
-    <div class="form-group">
-        <div id="imglist" align="middle">
-            <!--<img id="image1" name="1" src="{{imgUrl}}" height="800" align="middle"/>-->
-            <img id="image1" name="1" src="data:;base64,{{ img }}" height="800" alt="screenshot"/>
-            <!--<img id="image1" name="1" src="http://172.16.100.55:5000/static/screenshot/normalScreenShot/8523_success2018-01-24_12_09_20.jpg" height="800" align="middle"/>-->
-        </div>
-    </div>
+<div class="wrapper wrapper-content">
+    <div class="flot-chart-content">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3 style="text-align:center">共有图片{{imgCnt}}张</h3>
+                <!--<h4 style="text-align:center">{{imgTitle}}</h4>-->
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10" align="right">
+                        <button id="btn_next" type="button" class="btn btn-primary btn-sm"
+                                onclick="window.location.href=('/view_test_suite_screenshot?id={{id}}&test_batch_id={{test_batch_id}}&type={{type}}&index={{index}}')">
+                            下一页
+                        </button>
+                        <button id="btn_back" type="button" class="btn btn-default btn-sm"
+                                onclick="return_page('{{test_batch_id}}','{{type}}')">返回
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div id="imglist" align="middle">
+                        <!--<img id="image1" name="1" src="{{imgUrl}}" height="800" align="middle"/>-->
+                        <img id="image1" name="1" src="data:;base64,{{ img }}" height="800" alt="screenshot"/>
+                        <!--<img id="image1" name="1" src="http://172.16.100.55:5000/static/screenshot/normalScreenShot/8523_success2018-01-24_12_09_20.jpg" height="800" align="middle"/>-->
+                    </div>
+                </div>
 
 
-    <style>
-        .error {
-            color: red;
-        }
-    </style>
-    </form>
+                <style>
+                    .error {
+                        color: red;
+                    }
+                </style>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 {% endblock %}

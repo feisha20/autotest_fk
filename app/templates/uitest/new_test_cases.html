@@ -24,14 +24,14 @@
 
 {% block content %}
 <div class="wrapper wrapper-content">
-    <div class="container">
+    <div class="flot-chart-content">
         <div class="row">
             <div class="col-sm-12">
                 <h2 style="text-align:center" class="text-navy">新增测试用例</h2>
                 <form class="form-horizontal" id="new_test_case" action="/add_test_case" method="post">
                     <!--action="/save_new_test_case" method="post"-->
                     <div class="form-group">
-                        <label for="type" class="col-sm-2 control-label">用例类型</label>
+                        <label for="type" class="col-sm-1 control-label">用例类型</label>
                         <div class="col-sm-10">
                             <select class="form-control required" name="type" id="type"
                                     onchange="if(this.value != '') setModule(this.options[this.selectedIndex].value);">
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="module" class="col-sm-2 control-label">所属模块</label>
+                        <label for="module" class="col-sm-1 control-label">所属模块</label>
                         <div class="col-sm-10">
                             <select class="form-control required" name="module" id="module">
                                 <option value="">-请选择-</option>
@@ -53,14 +53,14 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">名称</label>
+                        <label for="name" class="col-sm-1 control-label">名称</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control required" id="name" name="name" maxlength="20"
                                    placeholder="请输入用例名称">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="steps" class="col-sm-2 control-label">步骤</label>
+                        <label for="steps" class="col-sm-1 control-label">步骤</label>
                         <div class="col-sm-10">
                             <a href="javascript:void(0)" onclick="openEditStepWindow()">步骤生成器</a>
                             <textarea class="form-control required" id="steps" name="steps" placeholder="请输入步骤"
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="description" class="col-sm-2 control-label">描述</label>
+                        <label for="description" class="col-sm-1 control-label">描述</label>
                         <div class="col-sm-10">
                             <input type="longtext" class="form-control" id="description" name="description"
                                    maxlength="50"
@@ -93,7 +93,7 @@
                                 </thead>
                                 <tbody id='tbody'>
                             </table>
-                            <div align="left">
+                            <div align="left" >
                             <a class="btn  btn-primary btn-sm" href="javascript:void(0)" onclick="SaveAndCloseEditStepWindow()">保存</a>
                             <a class="btn btn-outline btn-default btn-sm" href="javascript:void(0)" onclick="closeEditStepWindow()">关闭</a>
                             </div>
@@ -101,7 +101,8 @@
                         <div id="fade" class="black_overlay"></div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
+                         <label for="steps" class="col-sm-1 control-label" >操作</label>
+                        <div class="col-sm-4" align="left">
                             <button id="submitButton" class="btn btn-primary" onclick="submitAddForm()">保存</button>
                             <button id="btn_add" type="button" class="btn btn-default"
                                     onclick="window.location.href=('/test_cases')">返回
@@ -117,8 +118,8 @@
 .error{
 	color:red;
 }
-.black_overlay{ display: none; position: absolute; top: 0%; left: 10%; width: 90%; height: 100%; background-color: black; z-index:1001; -moz-opacity: 0.6; opacity:.60; filter: alpha(opacity=60); }
-.white_content { display: none; position: absolute; top: 0%; left: 10%; width: 90%; height: 100%; padding: 16px; border: 2px solid green; background-color: white; z-index:1002; overflow: auto; }
+.black_overlay{ display: none; position: absolute; top: 8%; left: 13%; width: 70%; height: 100%; background-color: black; z-index:1001; -moz-opacity: 0.6; opacity:.60; filter: alpha(opacity=60); }
+.white_content { display: none; position: absolute; top: 8%; left: 13%; width: 70%; height: 100%; padding: 16px; border: 2px solid green; background-color: white; z-index:1002; overflow: auto; }
 .white_table td {
     overflow:hidden;
     text-overflow:ellipsis;

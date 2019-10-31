@@ -105,13 +105,13 @@ var TableInit = function (test_suite_id) {
             //通过判断单元格的值，来格式化单元格，返回的值即为格式化后包含的元素
             var a = "";
                 if(value == "1-执行成功") {
-                    var a = '<span style="color:#00ff00">'+value+'</span>';
+                    var a = '<span style="color:#00CD00">'+value+'</span>';
                 }else if(value == "2-执行失败"){
-                    var a = '<span style="color:#0000ff">'+value+'</span>';
+                    var a = '<span style="color:#FF3030">'+value+'</span>';
                 }else if(value == "0-待执行") {
-                    var a = '<span style="color:#FF0000">'+value+'</span>';
+                    var a = '<span style="color:#EEC900">'+value+'</span>';
                 }else if(value == "4-执行中") {
-                    var a = '<span style="color:#FF0000">'+value+'</span>';
+                    var a = '<span style="color:#4876FF">'+value+'</span>';
                 }else{
                     var a = '<span>'+value+'</span>';
                 }
