@@ -1,10 +1,19 @@
-# 数据库配置
+# 本地数据库配置
 DBtype = '2'  # '1' : sqlite,  2: mysql
 db_host = 'localhost'
 db_port = '3306'
 db_user = 'root'
 db_password = 'test123456'
 database = 'test_auto_new'
+
+
+# # 服务数据库配置
+# DBtype = '2'  # '1' : sqlite,  2: mysql
+# db_host = '106.75.164.203'
+# db_port = '3306'
+# db_user = 'fk_user'
+# db_password = 'test123456'
+# database = 'test_auto_new'
 
 
 # 截图目录相关配置
