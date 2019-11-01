@@ -329,7 +329,7 @@ function add_test_suite()
          $.ajax(
         {
           url: "/runtest.json",
-          data:{"id":test_suite_id,"type":"test_suite"},
+          data:{"id":test_suite_id,"type":"test_suite_rerun_all"},
           type: "get",
           dataType:"json",
           beforeSend:function()
@@ -343,7 +343,7 @@ function add_test_suite()
               // 解析json数据
               var data = data;
               if(data.code==200){
-              alert('success!');
+              alert('开始执行!');
               document.location.reload();
               }else{
               alert('code is :'+data.code+' and message is :'+data.msg);
